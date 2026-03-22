@@ -20,7 +20,8 @@
                 </h1>
                 <form class="search-form" action="{{ url_for('search') }}" method="GET" role="search" aria-label="Search articles">
                     <label for="search-input" class="sr-only">Search by keyword</label>
-                    <input type="text" id="search-input" name="query" placeholder="Search by keyword" required>
+                    <input type="text" id="search-input" name="query" placeholder="Search by keyword" aria-describedby="search-hint" required>
+                    <span id="search-hint" class="sr-only">Enter keywords to search articles</span>
                     <button type="submit">Search</button>
                 </form>
             </div>

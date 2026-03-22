@@ -19,10 +19,13 @@ def index():
         entries = [(source, entry) for entry in parsed_feed.entries]
         articles.extend(entries)
 
-    if(articles[1].published_parsed):
-        articles = sorted(articles, key=lambda x: x[1].published_parsed, reverse=True)
+    # Sort by publication date if available
+    if articles and len(articles) > 1:
+        sortable = [a for a in articles if hasattr(a[1], 'published_parsed') and a[1].published_parsed]
+        if sortable and len(sortable) > 1:
+            articles = sorted(sortable, key=lambda x: x[1].published_parsed, reverse=True)
 
-    page = request.arge.get('page', 1, type=int)
+    page = request.args.get('page', 1, type=int)
     per_page = 10
     total_articles = len(articles)
     start = (page-1)*per_page
@@ -35,7 +38,7 @@ def index():
 @app.route('/search')
 
 def search():
-    query = request.arge.get('q')
+    query = request.args.get('query', '').strip()
     
     articles = []
     for source, feed in RSS_FEEDS.items():
@@ -43,7 +46,7 @@ def search():
         entries = [(source, entry) for entry in parsed_feed.entries]
         articles.extend(entries)
 
-    results = [article for article in articles if query.lower() in article[1].title.lower()]
+    results = [article for article in articles if query and query.lower() in article[1].title.lower()]
     
     return render_template('search_result.html', articles=results, query=query)
 
