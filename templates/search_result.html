@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results - Project FeedLock{% endblock %}
+
+{% block content %}
+    <div class="search-results-header">
+        <h1>Search Results For: <span class="search-query">{{ query }}</span></h1>
+        <p class="results-count">{{ articles|length }} result(s) found</p>
+    </div>
+
+    {% if articles %}
+        <div class="articles">
+            {% for article in articles %}
+                <article class="article-card">
+                    <h2>
+                        <a href="{{ article[1].link }}">{{ article[1].title }}</a>
+                    </h2>
+                    <div class="article-meta">
+                        <span class="article-source">{{ article[0] }}</span>
+                        <span class="article-date">{{ article[1].published }}</span>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="no-results">
+            <h2>No Results Found</h2>
+            <p>No articles match your search query. Try different keywords.</p>
+            <a href="{{ url_for('index') }}">Return to Home</a>
+        </div>
+    {% endif %}
+{% endblock %}

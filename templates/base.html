@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project FeedLock - Stay updated with the latest news from multiple sources">
+    <meta name="theme-color" content="#2563eb">
+    <title>{% block title %}Project FeedLock{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="{{ url_for('index') }}">Project FeedLock</a>
+                </h1>
+                <form class="search-form" action="{{ url_for('search') }}" method="GET" role="search" aria-label="Search articles">
+                    <label for="search-input" class="sr-only">Search by keyword</label>
+                    <input type="text" id="search-input" name="query" placeholder="Search by keyword" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+</body>
+</html>
