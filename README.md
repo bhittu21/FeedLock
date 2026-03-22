@@ -476,7 +476,7 @@ SOFTWARE.
 [![GitHub](https://img.shields.io/badge/GitHub-bhittu21-181717?style=for-the-badge&logo=github)](https://github.com/bhittu21)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-sheikhabirali-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sheikhabirali)
 [![Portfolio](https://img.shields.io/badge/Portfolio-sheikhabirali.netlify.app-FF5722?style=for-the-badge&logo=netlify)](https://sheikhabirali.netlify.app/)
-[![Email](https://img.shields.io/badge/Email-contact@sheikhabirali.netlify.app-D14836?style=for-the-badge&logo=gmail)](mailto:contact@sheikhabirali.netlify.app)
+[![Email](https://img.shields.io/badge/Email-contact@sheikhabirali.netlify.app-D14836?style=for-the-badge&logo=gmail)](mailto:sheikhabirali@gmail.com)
 
 </div>
 
@@ -495,6 +495,6 @@ SOFTWARE.
 
 **⭐ Star this repository if you found it helpful!**
 
-*Made with ❤️ by [Sheikh Abir Ali](https://github.com/bhittu21)*
+*Made with by [Sheikh Abir Ali](https://github.com/bhittu21)*
 
 </div>
